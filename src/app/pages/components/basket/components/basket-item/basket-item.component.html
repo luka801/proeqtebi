@@ -1,0 +1,61 @@
+
+
+   <div class="card neon-card shadow-sm rounded-4 p-3 mx-auto">
+  <h5 class="card-header text-center text-white rounded-3">
+    {{ card.product.name }}
+  </h5>
+
+  <img
+    class="card-img-top mx-auto d-block mt-3"
+    width="100"
+    [src]="card.product.image"
+    alt="{{ card.product.name }}"
+    style="object-fit: contain; height: 100px;"
+  />
+
+  <div class="card-body text-center">
+    <h6 class="text-muted">
+      Default Price: <strong>{{ card.product.price }}</strong>
+    </h6>
+
+    <div class="d-flex justify-content-center align-items-center my-3 flex-wrap gap-2">
+      <button
+        class="btn btn-outline-secondary btn-sm"
+        (click)="onUpdateBtnClick('plus')"
+      >
+        +
+      </button>
+      <span>{{ card.quantity }}</span>
+      <button
+        class="btn btn-outline-secondary btn-sm"
+        (click)="onUpdateBtnClick('minus')"
+      >
+        -
+      </button>
+    </div>
+
+    <h6>
+      Updated Price:
+      <strong class="text-success">{{ card.price }}</strong>
+    </h6>
+
+    <a class="btn btn-danger mt-3" (click)="onDeleteBtnClick()">delete</a>
+  </div>
+</div>
+
+
+
+<h6 class="text-muted">
+  Default Price:
+  <strong class="default-price">{{ card.product.price }}</strong>
+</h6>
+
+
+
+
+
+
+
+
+
+

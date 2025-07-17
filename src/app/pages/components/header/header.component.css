@@ -1,0 +1,133 @@
+/* .header-container {
+    width: 100%;
+    background: linear-gradient(to bottom, #202020, #3a2040);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+} */
+
+
+/* .header-container {
+  width: 100%;
+  background: linear-gradient(to bottom, #001833, #330029);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-family: Arial, sans-serif;
+} */
+
+
+
+.header-container {
+  width: 100%;
+  background: linear-gradient(to right, #001f33, #330033);
+  background-size: 200% 200%;
+  animation: neonHeader 8s ease infinite;
+  padding: 15px 0;
+  box-shadow: 0 0 10px #003344, 0 0 20px #330044, 0 0 30px rgba(51, 0, 68, 0.4);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  color: #e0e0e0;
+ 
+}
+
+
+@keyframes neonHeader {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-main-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-main-logo img {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-main-logo h1 {
+    font-size: 24px;
+    color: #9aece6;
+    margin: 0;
+}
+
+.header-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header-nav strong {
+    font-size: 16px;
+    color: #9aece6;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.header-nav strong:hover {
+    color: #000000;
+}
+
+
+@media (max-width: 768px) {
+    .header-center {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 15px;
+    }
+
+    .header-main-logo img {
+        width: 90px;
+        height: 90px;
+        margin-right: 10px;
+    }
+
+    .header-main-logo h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .header-nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-main-logo img {
+        width: 70px;
+        height: 70px;
+        margin-right: 8px;
+    }
+
+    .header-main-logo h1 {
+        font-size: 18px;
+    }
+
+    .header-nav {
+        gap: 15px;
+    }
+
+    .header-nav strong {
+        font-size: 14px;
+    }
+}

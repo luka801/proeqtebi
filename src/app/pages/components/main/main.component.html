@@ -1,0 +1,25 @@
+<div class="filter-section">
+  <app-product-filter
+    (formObjectEmitter)="formObjectEmitterSub($event)"
+    [categoriesArray]="categoriesArray">
+  </app-product-filter>
+</div>
+
+<div class="basket-link-wrapper">
+  <a routerLink="/basket" class="basket-link">🛒 კალათაში გადასვლა</a>
+</div>
+
+<ng-container *ngIf="productsArray.length > 0; else error">
+  <div class="products-wrapper">
+    <ng-container *ngFor="let card of productsArray">
+      <app-product
+        (productEmitter)="productEmitterSub($event)"
+        [item]="card">
+      </app-product>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-template #error>
+  <p class="no-products">პროდუქტები ვერ მოიძებნა</p>
+</ng-template>

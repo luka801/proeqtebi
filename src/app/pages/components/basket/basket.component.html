@@ -1,0 +1,25 @@
+
+<div class="back-button-wrapper">
+  <button class="back-button" routerLink="/home">← უკან დაბრუნება</button>
+</div>
+
+
+
+<ng-container *ngIf="basketArray.length > 0; else error">
+  <div class="basket-container">
+    <ng-container *ngFor="let item of basketArray">
+      <app-basket-item 
+        (deleteCardEmitter)="deleteCardEmitterSub($event)"
+        (updateCardEmitter)="updateCardEmitterSub($event)" 
+        [card]="item">
+      </app-basket-item>
+    </ng-container>
+  </div>
+  <div class="total-price-container">
+    ჯამური ფასი: <strong> {{ totalPrice | number:'1.2-2' }} $</strong>
+  </div>
+</ng-container>
+
+<ng-template #error>
+  <p class="empty-basket-message">Basket is empty</p>
+</ng-template>

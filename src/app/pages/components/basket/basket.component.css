@@ -1,0 +1,140 @@
+.basket-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+}
+
+app-basket-item {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 250px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+app-basket-item:hover {
+  transform: translateY(-5px);
+}
+
+.empty-basket-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #999;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff3f3;
+  border: 1px solid #ffc0c0;
+  border-radius: 0.75rem;
+  width: fit-content;
+}
+
+.empty-basket-message {
+  text-align: center;
+  font-size: 24px;
+  color: #aaa;
+  font-weight: 500;
+  margin-top: 120px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.back-button-wrapper {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button-wrapper {
+  margin: 30px 0 10px;
+  text-align: center;
+}
+
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .basket-container {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .empty-basket-message {
+    font-size: 20px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .basket-container {
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  app-basket-item {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.total-price-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #28a745;
+  z-index: 1000;
+}
